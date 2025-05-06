@@ -1,0 +1,33 @@
+{% extends "base.twig" %}
+
+{% block title %}Cadastro - NerdHub{% endblock %}
+
+{% block content %}
+  <div class="container-login">
+    
+    <section class="login-container">
+      <h1>Bem-Vindo!</h1>
+      <p>Faça seu Cadastro</p>
+
+      <form>
+        <div class="input-login">
+          <label for="nomeCompleto">Nome Completo:</label>
+          <input type="text" id="nomeCompleto" name="nomeCompleto">
+        </div>
+        
+        <div class="input-login">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email">
+        </div>
+
+        <div class="input-login">
+          <label for="senha">Senha:</label>
+          <input type="password" id="senha" name="senha">
+        </div>
+
+        <div class="input-login">
+          <label for="senhaConfirmar">Confirmar senha:</label>
+          <input type="password" id="senhaConfirmar" name="senhaConfirmar">
+        </div>
+        
+        <button type="submit" class="login

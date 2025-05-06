@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - NerdHub</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css">
-</head>
+{% extends "base.twig" %}
 
-<body>
+{% block title %}Login - NerdHub{% endblock %}
+
+{% block content %}
   <div class="container-login">
     
     <section class="login-container">
@@ -33,16 +26,13 @@
         <div class="cadastro-link">
           <p>Ainda não tem cadastro? <a href="../tela-cadastro/index.html">Cadastre-se aqui</a></p>
         </div>
-        
       </form>
       
     </section>
 
     <div class="imagem-login">
-      <img class="img-login" src="/assets/login.png" alt="imagem de 
-      login">
+      <img class="img-login" src="../assets/login.png" alt="imagem de login">
     </div>
 
   </div>
-</body>
-</html>
+{% endblock %}

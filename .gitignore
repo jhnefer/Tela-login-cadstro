@@ -1,0 +1,31 @@
+# Composer e arquivos desnecessários
+/vendor/
+/composer.lock
+
+# Arquivos de ambiente
+.env
+*.env
+
+# Logs e caches
+*.log
+*.cache
+
+# Pastas de IDEs e editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Pastas temporárias
+/tmp/
+/uploads/
+
+# Cache de templates
+storage/framework/views/*
+storage/logs/*
