@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro</h1>
+        <p>Insira suas informações</p>
+
+        {% if erro %}
+            {% if erro == 'senhas_nao_coincidem' %}
+                <p class="error-message">As senhas não coincidem.</p>
+            {% elseif erro == 'campos_vazios' %}
+                <p class="error-message">Preencha todos os campos.</p>
+            {% elseif erro == 'email_invalido' %}
+                <p class="error-message">Digite um email válido.</p>
+            {% elseif erro == 'email_ja_cadastrado' %}
+                <p class="error-message">Este email já está cadastrado.</p>
+            {% elseif erro == 'erro_ao_cadastrar' %}
+                <p class="error-message">Erro ao cadastrar usuário. Tente novamente.</p>
+            {% endif %}
+        {% endif %}
+
+        {% if sucesso == 'cadastro_realizado' %}
+            <p class="success-message">Cadastro realizado com sucesso!</p>
+        {% endif %}
+
+        <form method="POST" action="script/cadastro/processa_cadastro.php">
+            <input type="text" name="nome_completo" placeholder="Nome Completo" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <input type="password" name="confirmar_senha" placeholder="Confirmar Senha" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+
+    <script>
+    document.querySelector("form").addEventListener("submit", function (e) {
+        const nome = document.querySelector("[name='nome_completo']").value.trim();
+        const email = document.querySelector("[name='email']").value.trim();
+        const senha = document.querySelector("[name='senha']").value;
+        const confirmarSenha = document.querySelector("[name='confirmar_senha']").value;
+
+        if (!nome || !email || !senha || !confirmarSenha) {
+            alert("Preencha todos os campos.");
+            e.preventDefault();
+            return;
+        }
+
+        const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        if (!emailValido) {
+            alert("Digite um email válido.");
+            e.preventDefault();
+            return;
+        }
+
+        if (senha !== confirmarSenha) {
+            alert("As senhas não coincidem.");
+            e.preventDefault();
+            return;
+        }
+    });
+    </script>
+</body>
+</html>

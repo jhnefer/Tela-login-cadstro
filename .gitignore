@@ -1,0 +1,24 @@
+# Ignora a pasta de dependências do Composer
+/vendor/
+
+# Ignora arquivos de cache e logs
+*.log
+*.cache
+
+# Ignora configurações do PHPStorm, VSCode, etc.
+.idea/
+.vscode/
+
+# Ignora arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignora arquivos do XAMPP (caso existam temporários)
+*.bak
+*.tmp
+
+# Ignora arquivos do Composer gerados automaticamente
+composer.lock
+
+# Ignora arquivos do sistema do Git
+*.swp
